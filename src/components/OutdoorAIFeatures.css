@@ -1,0 +1,359 @@
+.vibrant-ai-section {
+  padding: 150px 0;
+  background-color: var(--accent); /* SOLID ACCENT COLOR BACKGROUND */
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.vai-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 4rem;
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  position: relative;
+  z-index: 10;
+}
+
+/* --- TEXT SIDE --- */
+.vai-text-side {
+  flex: 1;
+}
+
+.vai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.vai-text-side h2 {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.vai-text-side h2 span {
+  color: white;
+}
+
+.vai-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 4rem;
+  max-width: 550px;
+}
+
+.vai-feature-list {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.vai-feat-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.vai-feat-icon {
+  width: 54px;
+  height: 54px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.vai-feat-text h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.vai-feat-text p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin: 0;
+}
+
+
+/* --- VISUAL SIDE (Floating Glassmorphism) --- */
+.vai-visual-side {
+  flex: 1.2;
+  position: relative;
+  height: 600px;
+}
+
+.vai-bg-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.floating-composition {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Base Glass Card Style */
+.glass-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 24px;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15), inset 0 0 20px rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  overflow: hidden;
+}
+
+/* Card 1: Radar */
+.card-top-left {
+  top: 40px;
+  left: 0;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.gc-header {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+}
+
+.gc-radar {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.radar-circle {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  animation: radarPulse 3s infinite;
+}
+
+.rc1 { width: 100%; height: 100%; animation-delay: 0s; }
+.rc2 { width: 66%; height: 66%; animation-delay: 1s; }
+.rc3 { width: 33%; height: 33%; animation-delay: 2s; }
+
+.radar-icon {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+@keyframes radarPulse {
+  0% { transform: scale(0.5); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+.gc-footer {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 8px 16px;
+  border-radius: 100px;
+}
+
+/* Card 2: Massive Counter */
+.card-center-right {
+  top: 150px;
+  right: 0;
+  width: 350px;
+}
+
+.card-center-right .gc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.gc-massive-number {
+  font-size: 4.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: white;
+  margin-bottom: 5px;
+}
+
+.gc-trend {
+  font-size: 1rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+}
+
+.gc-bar-chart {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  height: 80px;
+  gap: 12px;
+}
+
+.gbar {
+  flex: 1;
+  background: white;
+  border-radius: 6px 6px 0 0;
+  opacity: 0.8;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* Card 3: Status */
+.card-bottom-left {
+  bottom: 40px;
+  left: 50px;
+  width: auto;
+  padding: 20px 30px;
+}
+
+.gc-icon-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gc-icon-row svg {
+  color: white;
+}
+
+.gc-status-text strong {
+  display: block;
+  font-size: 1.1rem;
+  color: white;
+  margin-bottom: 4px;
+}
+
+.gc-status-text span {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1100px) {
+  .vai-container {
+    flex-direction: column;
+    gap: 60px;
+  }
+
+  .vai-visual-side {
+    width: 100%;
+    height: 500px;
+  }
+
+  .card-top-left { left: 5%; }
+  .card-center-right { right: 5%; }
+  .card-bottom-left { left: 10%; bottom: 0; }
+}
+
+@media (max-width: 768px) {
+  .vibrant-ai-section { padding: 100px 0; }
+  .vai-container { padding: 0 1.5rem; }
+  
+  .vai-text-side h2 { font-size: 3rem; }
+  .vai-subtitle { margin-bottom: 2rem; font-size: 1.1rem; }
+
+  /* Beautiful Staggered Vertical Stack for Mobile */
+  .vai-visual-side { 
+    height: auto; 
+    margin-top: 3rem;
+  }
+  
+  .floating-composition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding-bottom: 40px;
+  }
+
+  .glass-card { 
+    position: relative !important; 
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 95% !important; 
+    /* Keep the floating animation on mobile */
+    animation: mobileFloat 4s ease-in-out infinite alternate !important;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4), inset 0 0 20px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Overlapping effect */
+  .card-top-left { 
+    z-index: 1; 
+    margin-left: -5%;
+    animation-delay: 0s !important; 
+  }
+  
+  .card-center-right { 
+    z-index: 2; 
+    margin-top: -40px; 
+    margin-right: -5%;
+    animation-delay: 1s !important; 
+  }
+  
+  .card-bottom-left { 
+    z-index: 3; 
+    margin-top: -40px; 
+    margin-left: -5%;
+    animation-delay: 2s !important; 
+  }
+
+  @keyframes mobileFloat {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-12px); }
+  }
+
+  .gc-massive-number { font-size: 3.5rem; }
+  .vai-bg-circle { width: 300px; height: 300px; opacity: 0.5; }
+}

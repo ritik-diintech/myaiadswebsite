@@ -1,0 +1,519 @@
+/* GLOBAL */
+.outdoor-services-wrapper {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.outdoor-services-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Common Container */
+.bus-container, .van-container, .rickshaw-container, .billboard-container, .poll-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 4rem;
+}
+
+
+/* --- 1. BUS ADS (Premium Bento Layout) --- */
+.service-bus-unique {
+  background-color: #020617; /* Deeper slate/black for a richer feel */
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bus-text-wrapper {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.bus-badge {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.1);
+  color: #60a5fa;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.bus-text-wrapper h2 {
+  font-size: clamp(3.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+.bus-text-wrapper p {
+  font-size: 1.25rem;
+  color: #94a3b8;
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Bento Grid */
+.bus-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 20px;
+  /* Instead of fixed rows, we let content dictate or use auto-rows */
+}
+
+.bus-bento-item {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  background: #0f172a;
+}
+
+.bus-bento-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bus-bento-item:hover img {
+  transform: scale(1.05);
+}
+
+/* Specific Placements */
+.bento-img-1 { grid-column: span 8; grid-row: span 2; min-height: 500px; }
+.bento-img-2 { grid-column: span 4; grid-row: span 1; min-height: 240px; }
+.bento-img-3 { grid-column: span 4; grid-row: span 1; min-height: 240px; }
+.bento-img-4 { grid-column: span 7; grid-row: span 1; min-height: 240px; }
+.bento-stats { grid-column: span 5; grid-row: span 1; min-height: 240px; }
+
+/* Overlays & Content */
+.bento-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.bento-stats {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+}
+
+.stat-box {
+  text-align: center;
+  width: 100%;
+}
+
+.stat-box h4 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+  margin-bottom: 5px;
+  background: linear-gradient(to right, #ffffff, #94a3b8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-box span {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+
+
+/* --- 2. VAN ADS (Accent & Vertical Split) --- */
+.service-van-unique {
+  background-color: var(--accent); /* #fa7634 */
+  color: white;
+}
+
+.van-container {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+
+.van-text {
+  flex: 1;
+  position: sticky;
+  top: 150px;
+  align-self: flex-start;
+}
+
+.van-text h2 {
+  font-size: 4.5rem;
+  font-weight: 950;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  color: var(--premiumblack);
+}
+
+.van-text p {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.van-btn {
+  background: var(--premiumblack);
+  color: white;
+  border: none;
+  padding: 18px 36px;
+  border-radius: 100px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.van-btn:hover { transform: translateX(10px); }
+
+.van-stack {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.van-img-wrap {
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+  border: 4px solid white;
+}
+
+
+/* --- 3. RICKSHAW ADS (Pure White Checkerboard) --- */
+.service-rickshaw-unique {
+  background-color: #ffffff;
+  color: var(--premiumblack);
+}
+
+.rickshaw-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.rickshaw-header h2 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.rickshaw-header p {
+  font-size: 1.2rem;
+  color: #475569;
+}
+
+.rickshaw-checkerboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.r-checker-item {
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #f1f5f9;
+}
+
+.text-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px;
+  background: transparent;
+}
+
+.text-item h3 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+
+.text-item p {
+  font-size: 1.1rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+
+/* --- 4. BILLBOARDS (Pure Black Cinematic) --- */
+.service-billboard-unique {
+  background-color: #000000;
+  color: white;
+}
+
+.billboard-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.billboard-header h2 {
+  font-size: clamp(4rem, 8vw, 7rem);
+  font-weight: 900;
+  letter-spacing: 0.2em;
+  margin: 0;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+}
+
+.billboard-header p {
+  font-size: 1.2rem;
+  color: #9ca3af;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.billboard-hero-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.billboard-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.billboard-small-img {
+  aspect-ratio: 16/9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+
+/* --- 5. STREET POLLS (Dark Charcoal) --- */
+.service-poll-unique {
+  background-color: #1e293b;
+  color: white;
+}
+
+.poll-text {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.poll-text h2 {
+  font-size: 4rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.poll-text p {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+}
+
+.poll-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.poll-img-box {
+  aspect-ratio: 16/9;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* --- RESPONSIVE STYLES --- */
+@media (max-width: 1024px) {
+  .bus-container, .van-container, .rickshaw-container, .billboard-container, .poll-container {
+    padding: 60px 1.5rem;
+  }
+
+  /* Bus Bento adjustments for Tablet */
+  .bus-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bento-img-1 { grid-column: span 2; min-height: 350px; }
+  .bento-img-2 { grid-column: span 1; min-height: 250px; }
+  .bento-img-3 { grid-column: span 1; min-height: 250px; }
+  .bento-img-4 { grid-column: span 2; min-height: 300px; }
+  .bento-stats { grid-column: span 2; flex-direction: row; gap: 40px; padding: 30px; }
+
+  .van-container {
+    flex-direction: column;
+    padding-right: 0;
+  }
+  
+  .van-text {
+    position: static;
+    text-align: center;
+    padding-right: 2rem;
+  }
+
+  .van-btn { margin: 0 auto; }
+
+  .van-stack {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 30px;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .van-stack::-webkit-scrollbar {
+    display: none;
+  }
+
+  .van-img-wrap {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+
+  .rickshaw-checkerboard {
+    grid-template-columns: 1fr;
+  }
+  
+  .text-item { text-align: center; padding: 15px 0; }
+  
+  .r-checker-item {
+    aspect-ratio: 16/9;
+    border-radius: 16px;
+  }
+
+  .billboard-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .poll-gallery {
+    display: flex;
+    overflow-x: auto;
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+    padding: 0 1.5rem 20px;
+    gap: 15px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .poll-gallery::-webkit-scrollbar {
+    display: none;
+  }
+
+  .poll-img-box {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    aspect-ratio: 16/9;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Bus Bento Mobile adjustments */
+  .bus-text-wrapper h2 { font-size: 2.5rem; }
+  .van-text h2 { font-size: 2.8rem; }
+  .rickshaw-header h2 { font-size: 2.5rem; }
+  
+  .bento-img-1 { min-height: 240px; border-radius: 16px; }
+  .bento-img-2 { min-height: 160px; border-radius: 16px; }
+  .bento-img-3 { min-height: 160px; border-radius: 16px; }
+  .bento-img-4 { min-height: 200px; border-radius: 16px; }
+  
+  .bento-stats { 
+    flex-direction: row; 
+    gap: 20px; 
+    padding: 20px; 
+    border-radius: 16px; 
+  }
+  
+  .stat-box h4 { font-size: 2.5rem; }
+  .stat-box span { font-size: 0.8rem; }
+  
+  .bento-overlay {
+    bottom: 15px;
+    left: 15px;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+
+  .billboard-header {
+    margin-bottom: 2rem;
+  }
+
+  .billboard-header h2 { 
+    font-size: clamp(2rem, 12vw, 3.2rem); 
+    letter-spacing: 0.05em; 
+    line-height: 1;
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.4);
+  }
+  
+  .billboard-header p {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  .billboard-row {
+    display: flex;
+    overflow-x: auto;
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+    padding: 0 1.5rem 20px;
+    gap: 15px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .billboard-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .billboard-small-img {
+    flex: 0 0 85%;
+    scroll-snap-align: center;
+    aspect-ratio: 16/9;
+  }
+
+  .billboard-hero-img {
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+}

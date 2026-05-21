@@ -1,0 +1,32 @@
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#root {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+}
+
+/* Base styles to override some index.css constraints */
+body {
+  overflow-x: hidden;
+  background-color: #09090b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+
+.banner-btn:hover {
+  transform: translateY(-5px);
+}

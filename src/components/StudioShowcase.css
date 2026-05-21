@@ -1,0 +1,219 @@
+.ss-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Background Wall Wrapper */
+.ss-video-wall-container {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.ss-video-wall {
+    display: flex;
+    gap: 15px;
+    height: 160vh;
+    padding: 10px;
+    opacity: 0.55;
+    width: 100%; /* Reset to 100% for better stability */
+}
+
+.ss-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    will-change: transform; /* Hardware Acceleration */
+}
+
+.ss-middle {
+    margin-top: -150px;
+}
+
+.ss-video-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #0a0a0a;
+    aspect-ratio: 9 / 20; /* Uniform ultra-tall aspect ratio */
+}
+
+.ss-actual-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+.ss-actual-video.loaded {
+    opacity: 1;
+}
+
+/* Cinematic Overlays */
+.ss-heavy-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.95) 100%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.ss-video-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Content Overlay */
+.ss-content-overlay {
+    position: relative;
+    z-index: 10;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.ss-text-center {
+    text-align: center;
+    max-width: 900px;
+}
+
+.ss-main-title {
+    font-size: clamp(4.5rem, 15vw, 12rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 0.9;
+    margin-bottom: 20px;
+    letter-spacing: -4px;
+    /* Soft white glow like the 'Flow' image */
+    text-shadow: 0 0 40px rgba(255, 255, 255, 0.4);
+}
+
+.ss-accent-brand {
+    color: #ff5a1f; /* Accent Orange */
+    font-size: 0.8em; /* Adjusted slightly larger */
+    display: block; 
+    margin-bottom: 5px; /* Added slight gap as requested */
+}
+
+.ss-sub-glow {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+}
+
+.ss-action-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.ss-glass-btn {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 18px 50px;
+    border-radius: 100px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.ss-glass-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.ss-small-hint {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1px;
+}
+
+/* Scroll Hint Footer */
+.ss-scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+.ss-scroll-line {
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.4), transparent);
+}
+
+/* Background Blurs */
+.ss-bg-blur {
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 90, 31, 0.05) 0%, transparent 70%);
+    filter: blur(100px);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.ss-bg-blur.top {
+    top: -300px;
+    right: -200px;
+}
+
+.ss-bg-blur.bottom {
+    bottom: -300px;
+    left: -200px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .ss-main-title {
+        font-size: 5rem;
+    }
+    .ss-sub-glow {
+        font-size: 1.2rem;
+    }
+    .ss-video-wall {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .ss-main-title {
+        font-size: 5rem; /* Larger mobile heading */
+        letter-spacing: -2px;
+        line-height: 0.85;
+    }
+    .ss-accent-brand {
+        font-size: 0.75em;
+        margin-bottom: 2px;
+    }
+    .ss-glass-btn {
+        padding: 14px 35px;
+        font-size: 1rem;
+    }
+}

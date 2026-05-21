@@ -1,0 +1,369 @@
+.features-section {
+  padding: 140px 0;
+  background-color: var(--accent);
+  position: relative;
+}
+
+.features-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.section-tag {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-family: var(--heading);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 400;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.section-title .thin {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--premiumblack);
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-top: 15px;
+  line-height: 1.6;
+}
+
+/* Bento Grid System with Images */
+.features-bento-alt {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* On Desktop, treat the wrappers like they're not there */
+.mobile-scroll-row {
+  display: contents;
+}
+
+.mobile-stacked-cards {
+  display: contents;
+}
+
+.scroll-indicator-wrapper {
+  display: none;
+}
+
+.bento-card-alt {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 40px; /* More rounded corners */
+  overflow: hidden;
+  height: 480px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bento-card-alt.horizontal {
+  grid-column: span 2;
+}
+
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.card-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.bento-card-alt:hover .card-bg img {
+  transform: scale(1.08);
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+}
+
+.card-content-alt {
+  position: relative;
+  z-index: 2;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+}
+
+.card-header-alt {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 5px;
+}
+
+.card-icon-alt {
+  width: 54px;
+  height: 54px;
+  background: var(--accent); /* Orange like in the image */
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.card-header-alt h3 {
+  font-family: var(--heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: white;
+  margin: 0;
+}
+
+.card-content-alt p {
+  opacity: 1;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+}
+
+/* Watch Demo Button - Pill Style */
+.watch-demo-btn {
+  background: white;
+  color: #000;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 100px; /* True Pill */
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.watch-demo-btn:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Video Modal Styles */
+.video-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.video-modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16/9;
+  background: black;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+}
+
+.modal-video {
+  width: 100%;
+  height: 100%;
+}
+
+.close-video-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 2001;
+  transition: all 0.2s;
+}
+
+.close-video-btn:hover {
+  background: var(--accent);
+  transform: rotate(90deg);
+}
+
+@media (max-width: 1100px) {
+  .features-bento-alt {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bento-card-alt.horizontal {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-container {
+    padding: 0 15px;
+  }
+
+  .features-bento-alt {
+    display: block;
+  }
+
+  /* Horizontal scroll for first 2 cards */
+  .mobile-scroll-row {
+    display: flex !important;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 10px 0 20px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Hide scrollbar */
+  .mobile-scroll-row::-webkit-scrollbar {
+    display: none;
+  }
+  .mobile-scroll-row {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .mobile-scroll-row .bento-card-alt {
+    min-width: 82vw;
+    flex-shrink: 0;
+    height: 420px;
+    scroll-snap-align: start;
+    padding: 25px;
+    border-radius: 28px;
+  }
+
+  /* Override the horizontal span on mobile */
+  .mobile-scroll-row .bento-card-alt.horizontal {
+    grid-column: unset;
+    min-width: 82vw;
+  }
+
+  /* Stacked cards below the scroll row */
+  .mobile-stacked-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .mobile-stacked-cards .bento-card-alt {
+    width: 100%;
+    height: 380px;
+    padding: 25px;
+    border-radius: 28px;
+  }
+
+  /* Scroll Indicator — mobile only */
+  .scroll-indicator-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0 5px;
+  }
+
+  .scroll-indicator-track {
+    width: 60%;
+    height: 4px;
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 99px;
+    overflow: hidden;
+  }
+
+  .scroll-indicator-thumb {
+    height: 100%;
+    background: linear-gradient(90deg, #ffffff, var(--premiumblack));
+    border-radius: 99px;
+    min-width: 20%;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  }
+
+  .scroll-indicator-dots {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+  }
+
+  .scroll-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+  }
+
+  .scroll-dot-active {
+    background: #ffffff;
+    width: 8px;
+    height: 8px;
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+  }
+
+  .card-header-alt h3 {
+    font-size: 1.5rem;
+  }
+
+  .video-modal-overlay {
+    padding: 10px;
+  }
+}

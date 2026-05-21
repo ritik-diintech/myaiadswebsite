@@ -1,0 +1,329 @@
+.ee-section {
+    padding: 150px 0;
+    background-color: var(--accent);
+    background-image: radial-gradient(circle at center, #ff8c42 0%, #fa7634 100%);
+    position: relative;
+    overflow: hidden;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.ee-ambient-light {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.4);
+    filter: blur(150px);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.ee-bg-text {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    font-size: 15vw;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.05);
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    font-family: var(--heading);
+}
+
+.ee-container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.ee-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.ee-header h2 {
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-family: var(--heading);
+    font-weight: 900;
+    color: #000;
+    line-height: 1;
+    letter-spacing: -0.05em;
+}
+
+.ee-header h2 span {
+    color: #ffffff;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.ee-stage {
+    position: relative;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Floating Items */
+.ee-float-item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 20;
+}
+
+.ee-float-icon {
+    width: 65px;
+    height: 65px;
+    background: #000;
+    color: var(--accent);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+}
+
+.ee-float-item:hover .ee-float-icon {
+    transform: scale(1.1);
+    color: #fff;
+    background: var(--accent);
+}
+
+.ee-float-text h4 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #000;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-family: var(--heading);
+}
+
+.ee-float-line {
+    width: 30px;
+    height: 3px;
+    background: #ffffff;
+    margin-top: 5px;
+}
+
+/* Device Mockup */
+.ee-device-wrapper {
+    position: relative;
+    perspective: 1500px;
+}
+
+.ee-phone {
+    width: 330px;
+    max-width: 90vw;
+    height: 700px;
+    background: #000;
+    border: 12px solid #1a1a1a;
+    border-radius: 55px;
+    position: relative;
+    box-shadow: 0 50px 100px rgba(0,0,0,0.4);
+    overflow: hidden;
+}
+
+.ee-phone-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.ee-app-screen {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    position: relative;
+}
+
+.ee-full-screenshot {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ee-full-screenshot img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ee-app-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 20px;
+    background: linear-gradient(rgba(0,0,0,0.6), transparent);
+    z-index: 5;
+    pointer-events: none;
+}
+
+.ee-app-header-glass {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 900;
+    font-size: 0.85rem;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.ee-phone-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140%;
+    height: 140%;
+    background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 60%);
+    pointer-events: none;
+}
+
+/* Info Strips */
+.ee-info-strip {
+    position: absolute;
+    bottom: -110px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.ee-info-item {
+    background: #000;
+    padding: 20px 25px;
+    border-radius: 30px;
+    width: 480px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.ee-info-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--accent);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ee-info-content h3 {
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: #fff;
+    margin: 0 0 4px;
+    font-family: var(--heading);
+}
+
+.ee-info-content p {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.ee-info-arrow {
+    margin-left: auto;
+    opacity: 0.3;
+}
+
+/* Download Area */
+.ee-download-area {
+    margin-top: 180px;
+    display: flex;
+    justify-content: center;
+}
+
+.ee-download-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 100px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.ee-download-btn:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3);
+    background: #f0f0f0;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+    .ee-stage {
+        flex-direction: column;
+        height: auto;
+        padding-top: 50px;
+        gap: 20px;
+    }
+    .ee-float-item {
+        position: relative;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        width: 100%;
+        max-width: 320px;
+        background: rgba(0,0,0,0.1); /* Slightly darker for contrast */
+        padding: 15px;
+        border-radius: 25px;
+        margin: 0 auto; /* Center items */
+    }
+    .ee-info-strip {
+        position: relative;
+        bottom: auto;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
+        width: 100%;
+        gap: 15px;
+    }
+    .ee-info-item {
+        width: 90%;
+        max-width: 500px;
+    }
+    .ee-download-area {
+        margin-top: 60px;
+    }
+}
+
+@media (max-width: 640px) {
+    .ee-header h2 {
+        font-size: clamp(1.8rem, 10vw, 2.5rem);
+    }
+    .ee-phone {
+        width: 280px;
+        height: 600px;
+    }
+}

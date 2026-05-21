@@ -1,0 +1,132 @@
+.cag-section.scattered-theme {
+  padding: 120px 0;
+  background-color: #fdf2f8; /* Soft pinkish background like reference */
+  position: relative;
+  overflow: hidden;
+  color: #0f172a;
+  min-height: 1500px; /* Increased height for larger images */
+}
+
+.cag-container {
+  max-width: 1600px; /* Wider container for larger spread */
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 100%;
+}
+
+.cag-header {
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.cag-header h2 {
+  font-size: clamp(3rem, 6vw, 4.5rem);
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.cag-header p {
+  color: #64748b;
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.cag-scattered-area {
+  position: relative;
+  height: 1200px; /* Height for the floating zone */
+  width: 100%;
+}
+
+.cag-scattered-card {
+  position: absolute;
+  z-index: 2;
+  transition: z-index 0.3s;
+}
+
+.cag-scattered-card:hover {
+  z-index: 10;
+}
+
+.cag-card-inner {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.12);
+  background: white;
+  padding: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.cag-card-inner img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* Balanced Card Sizes */
+.cag-portrait { width: 300px; height: 450px; }
+.cag-square { width: 280px; height: 280px; }
+.cag-landscape { width: 450px; height: 300px; }
+
+/* Balanced Precise Positions */
+.card-1 { top: 5%; left: 3%; width: 260px; }
+.card-2 { top: -5%; left: 38%; width: 320px; }
+.card-3 { top: 8%; right: 5%; width: 280px; }
+.card-4 { top: 32%; left: 35%; width: 280px; }
+.card-5 { top: 40%; left: 6%; width: 240px; }
+.card-6 { top: 35%; right: 10%; width: 240px; }
+.card-7 { bottom: 5%; left: 30%; width: 380px; }
+.card-8 { bottom: 15%; left: 4%; width: 240px; }
+
+/* Background Glows */
+.cag-bg-glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+.cag-bg-glow.pink { top: 10%; left: -10%; background: #ec4899; }
+.cag-bg-glow.blue { bottom: 10%; right: -10%; background: #3b82f6; }
+
+/* Mobile Scattered Layout - Maintains the 'Cloud' feel but smaller */
+@media (max-width: 768px) {
+  .cag-section.scattered-theme {
+    min-height: 1000px;
+    padding: 60px 0;
+  }
+
+  .cag-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .cag-scattered-area {
+    height: 900px;
+  }
+
+  /* Shrink all cards for mobile */
+  .cag-portrait { width: 130px !important; }
+  .cag-square { width: 110px !important; }
+  .cag-landscape { width: 220px !important; }
+
+  /* Re-scatter for narrow screens */
+  .card-1 { top: 0%; left: 5%; width: 130px !important; }
+  .card-2 { top: 10%; right: 5%; width: 150px !important; }
+  .card-3 { top: 25%; left: 10%; width: 120px !important; }
+  .card-4 { top: 35%; right: 8%; width: 140px !important; }
+  .card-5 { top: 55%; left: 5%; width: 110px !important; }
+  .card-6 { top: 50%; right: 12%; width: 120px !important; }
+  .card-7 { bottom: 5%; left: 50%; transform: translateX(-50%) !important; width: 220px !important; }
+  .card-8 { bottom: 15%; left: 10%; width: 110px !important; }
+
+  .cag-card-inner {
+    border-radius: 12px;
+    padding: 4px;
+  }
+}

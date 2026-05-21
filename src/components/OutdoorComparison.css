@@ -1,0 +1,340 @@
+.outdoor-compare-section {
+  padding: 120px 0;
+  background-color: var(--premiumblack);
+  color: white;
+}
+
+.compare-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 4rem;
+}
+
+/* Header */
+.compare-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.compare-badge {
+  display: inline-block;
+  background: rgba(250, 118, 52, 0.1);
+  color: var(--accent);
+  padding: 8px 20px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  border: 1px solid rgba(250, 118, 52, 0.2);
+  margin-bottom: 1.5rem;
+}
+
+.compare-header h2 {
+  font-size: clamp(2.2rem, 8vw, 4rem);
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.compare-header p {
+  font-size: 1.2rem;
+  color: var(--text-dim);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Grid Wrapper */
+.compare-grid-wrapper {
+  position: relative;
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 30px;
+  padding: 40px;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+}
+
+/* Column Headers */
+.compare-col-headers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.col-head {
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.old-way {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.old-way h3 {
+  color: #94a3b8;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.old-way span {
+  color: #64748b;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.new-way {
+  background: rgba(250, 118, 52, 0.05);
+  border: 1px solid rgba(250, 118, 52, 0.2);
+  overflow: hidden;
+}
+
+.new-way-glow {
+  position: absolute;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(250, 118, 52, 0.2) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.new-way h3 {
+  position: relative;
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 5px;
+  z-index: 1;
+}
+
+.new-way span {
+  position: relative;
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  z-index: 1;
+}
+
+/* Rows */
+.compare-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.compare-row-item {
+  position: relative;
+}
+
+.feature-label {
+  text-align: center;
+  font-size: 0.9rem;
+  color: white;
+  background: #1e293b;
+  padding: 6px 20px;
+  border-radius: 100px;
+  display: inline-block;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.row-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding-top: 15px;
+}
+
+.compare-box {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 40px 30px 30px;
+  border-radius: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.compare-box:hover {
+  transform: translateY(-5px);
+}
+
+.old-box {
+  opacity: 0.7;
+}
+
+.new-box {
+  background: rgba(250, 118, 52, 0.03);
+  border-color: rgba(250, 118, 52, 0.15);
+}
+
+.compare-box p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #e2e8f0;
+}
+
+.old-box p {
+  color: #94a3b8;
+}
+
+.icon-red {
+  color: #ef4444;
+  flex-shrink: 0;
+}
+
+.icon-green {
+  color: #10b981;
+  flex-shrink: 0;
+}
+
+/* Mobile Specific Labels */
+.mobile-box-label {
+  display: none; /* Hidden on desktop */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .outdoor-compare-section {
+    padding: 80px 0;
+  }
+
+  .compare-container {
+    padding: 0 1.5rem;
+  }
+
+  .compare-header {
+    margin-bottom: 4rem;
+  }
+
+  .compare-header h2 {
+    font-size: 2.5rem;
+  }
+
+  /* Hide the top headers on mobile as they are redundant with the per-box labels */
+  .compare-col-headers {
+    display: none;
+  }
+
+  .compare-grid-wrapper {
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+
+  .compare-rows {
+    gap: 50px; /* More gap between feature sets */
+  }
+
+  .compare-row-item {
+    background: #0f172a80;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 40px 16px 20px;
+    margin-bottom: 0;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    backdrop-filter: blur(10px);
+  }
+
+  .feature-label {
+    top: -18px;
+    font-size: 0.85rem;
+    padding: 10px 24px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    box-shadow: 0 8px 20px rgba(250, 118, 52, 0.3);
+    width: auto;
+    white-space: nowrap;
+  }
+
+  .row-content {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding-top: 10px;
+  }
+
+  .compare-box {
+    padding: 24px 20px;
+    border-radius: 20px;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .old-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    opacity: 0.9;
+  }
+
+  .new-box {
+    background: rgba(250, 118, 52, 0.06);
+    border: 1px solid rgba(250, 118, 52, 0.2);
+    box-shadow: inset 0 0 30px rgba(250, 118, 52, 0.03);
+  }
+
+  .mobile-box-label {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+    color: #64748b;
+  }
+
+  .mobile-box-label.new-label {
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  .mobile-box-label.new-label::after {
+    content: 'RECOMMENDED';
+    font-size: 0.6rem;
+    background: var(--accent);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+
+  .box-text-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #cbd5e1;
+  }
+
+  .new-box p {
+    color: white;
+  }
+
+  .compare-box svg {
+    width: 22px;
+    height: 22px;
+    margin-top: 2px;
+  }
+}
